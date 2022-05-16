@@ -7,11 +7,14 @@ public class UserRegistrationMain {
         System.out.println("Welcome To User Registration");
         System.out.println("Enter 1 : validate first name");
         System.out.println("Enter 2 : validate last name");
+        System.out.println("Enter 3 : validate email");
         switch (scanner.nextInt()) {
             case 1:
                 UserRegistration.validFirstName();
                 break;
             case 2 : UserRegistration.validLastName();
+            break;
+            case 3 : UserRegistration.validEmail();
             break;
         }
     }

@@ -33,6 +33,21 @@ public class UserRegistration {
             System.out.println("name is invalid");
         }
     }
+    public static void validEmail() {
+
+        System.out.println("enter your Email");
+        String name2 = scanner.next();
+        String regex2 = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+";
+        Pattern pattern2 = Pattern.compile(regex2);
+        Matcher matcher2 = pattern2.matcher(name2);
+        boolean b2 = matcher2.matches();
+
+        if (b2) {
+            System.out.println("email is valid");
+        } else {
+            System.out.println("email is invalid");
+        }
+    }
     public boolean validateFirstName(String name) {
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex1);
@@ -50,4 +65,12 @@ public class UserRegistration {
         boolean b1 = matcher.matches();
         return b1;
     }
+
+    public boolean validateEmail(String name2) {
+        String regex2 = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+";
+        Pattern pattern = Pattern.compile(regex2);
+        Matcher matcher = pattern.matcher(name2);
+        boolean b2 = matcher.matches();
+        return b2;
     }
+}
