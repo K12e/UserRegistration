@@ -28,6 +28,8 @@ public class UserRegistrationMain {
             break;
             case 7 : UserRegistration.validPasswordRule2();
             break;
+            case 8 : UserRegistration.validPasswordRule3();
+            break;
 
         }
     }

@@ -100,6 +100,19 @@ public class UserRegistration {
         else
             System.out.println("password is only only one numeric is Invalid");
     }
+    public static void validPasswordRule3() {
+        System.out.println("Enter The Password At least one Upper case and one numeric");
+        String password = scanner.nextLine();
+        String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+1}$";
+        Pattern pattern6 = Pattern.compile(regex6);
+        Matcher matcher6 = pattern6.matcher(password);
+        boolean r = matcher6.matches();
+
+        if (r)
+            System.out.println("It is a valid Password.");
+        else
+            System.out.println("It is invalid Password.");
+    }
 
     public boolean validateFirstName(String name) {
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
@@ -151,6 +164,14 @@ public class UserRegistration {
         String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]$";
         Pattern pattern = Pattern.compile(regex6);
         Matcher matcher = pattern.matcher(Password2);
+        boolean b6 = matcher.matches();
+        return b6;
+    }
+
+    public static boolean validatePasswordRule3(String password) {
+        String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]$";
+        Pattern pattern = Pattern.compile(regex6);
+        Matcher matcher = pattern.matcher(password);
         boolean b6 = matcher.matches();
         return b6;
     }
