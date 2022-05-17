@@ -63,7 +63,7 @@ public class UserRegistration {
     }
     public static void validPassword() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your mobile number : ");
+        System.out.print("Enter your password : ");
         String Password = scanner.nextLine();
         String regex4 = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
         Pattern p4 = Pattern.compile(regex4);
@@ -74,6 +74,47 @@ public class UserRegistration {
         else
             System.out.println("password is Invalid");
     }
+    public static void validPasswordUppercase() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your password : ");
+        String password1 = scanner.nextLine();
+        String regex5 = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
+        Pattern p5 = Pattern.compile(regex5);
+        Matcher m5 = p5.matcher(password1);
+        boolean r5 = m5.matches();
+        if (r5)
+            System.out.println("password in Uppercase is Valid");
+        else
+            System.out.println("password  in Uppercase is Invalid");
+    }
+    public static void validPasswordNumeric() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your password : ");
+        String Password2 = scanner.nextLine();
+        String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]$";
+        Pattern p6 = Pattern.compile(regex6);
+        Matcher m6 = p6.matcher(Password2);
+        boolean r6 = m6.matches();
+        if (r6)
+            System.out.println("password is only only one numeric is Valid");
+        else
+            System.out.println("password is only only one numeric is Invalid");
+    }
+    public static void validatePasswordRule4() {
+        System.out.println("Enter the Password ");
+        String password = scanner.nextLine();
+        String regex7 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+        Pattern pattern7 = Pattern.compile(regex7);
+        Matcher matcher7 = pattern7.matcher(password);
+        boolean b7 = matcher7.matches();
+
+        if (b7)
+            System.out.println("It is a valid Password.");
+        else
+            System.out.println("It is invalid Password.");
+    }
+
+
 
     public boolean validateFirstName(String name) {
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
@@ -115,5 +156,12 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(Password);
         boolean b4 = matcher.matches();
         return b4;
+    }
+    public boolean validatePasswordRule1(String password1) {
+        String regex5 = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
+        Pattern pattern = Pattern.compile(regex5);
+        Matcher matcher = pattern.matcher(password1);
+        boolean b5 = matcher.matches();
+        return b5;
     }
 }
