@@ -41,6 +41,12 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validatePasswordRule1("Kalyai123");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenPasswordNumeric_WhenProper_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validatePasswordRule2("K1");
+        Assertions.assertTrue(result);
+    }
 
 }
 
