@@ -48,6 +48,19 @@ public class UserRegistration {
             System.out.println("email is invalid");
         }
     }
+    public static void validMobileNumber() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your mobile number : ");
+        String phoneNo = scanner.nextLine();
+        String regex3 = "(0|91)?[7-9][0-9]{9}";
+        Pattern p3 = Pattern.compile(regex3);
+        Matcher m3 = p3.matcher(phoneNo);
+        boolean r3 = m3.matches();
+        if (r3)
+            System.out.println("Phone number is Valid");
+        else
+            System.out.println("Phone number is Invalid");
+    }
     public boolean validateFirstName(String name) {
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex1);
@@ -72,5 +85,13 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(name2);
         boolean b2 = matcher.matches();
         return b2;
+    }
+
+    public boolean validateMobileNumber(String phoneNo) {
+        String regex1 = "(0|91)?[7-9][0-9]{9}";
+        Pattern pattern = Pattern.compile(regex1);
+        Matcher matcher = pattern.matcher(phoneNo);
+        boolean b1 = matcher.matches();
+        return b1;
     }
 }
