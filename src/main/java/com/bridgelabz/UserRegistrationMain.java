@@ -9,15 +9,17 @@ public class UserRegistrationMain {
         System.out.println("Enter 2 : validate last name");
         System.out.println("Enter 3 : validate email");
         System.out.println("Enter 4 : validate mobile number");
+        System.out.println("Enter 5 : validation password");
         switch (scanner.nextInt()) {
-            case 1:
-                UserRegistration.validFirstName();
+            case 1 :  UserRegistration.validFirstName();
                 break;
             case 2 : UserRegistration.validLastName();
             break;
             case 3 : UserRegistration.validEmail();
             break;
             case 4 : UserRegistration.validMobileNumber();
+            break;
+            case 5 : UserRegistration.validPassword();
             break;
         }
     }

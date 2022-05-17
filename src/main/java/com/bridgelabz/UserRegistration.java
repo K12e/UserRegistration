@@ -61,6 +61,20 @@ public class UserRegistration {
         else
             System.out.println("Phone number is Invalid");
     }
+    public static void validPassword() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your mobile number : ");
+        String Password = scanner.nextLine();
+        String regex4 = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
+        Pattern p4 = Pattern.compile(regex4);
+        Matcher m4 = p4.matcher(Password);
+        boolean r4 = m4.matches();
+        if (r4)
+            System.out.println("password is Valid");
+        else
+            System.out.println("password is Invalid");
+    }
+
     public boolean validateFirstName(String name) {
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex1);
@@ -93,5 +107,13 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(phoneNo);
         boolean b1 = matcher.matches();
         return b1;
+    }
+
+    public boolean validatePassword(String Password) {
+        String regex4 = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
+        Pattern pattern = Pattern.compile(regex4);
+        Matcher matcher = pattern.matcher(Password);
+        boolean b4 = matcher.matches();
+        return b4;
     }
 }
