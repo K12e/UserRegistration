@@ -176,6 +176,14 @@ public class UserRegistration {
             throw new UserRegistrationException("send proper number");
         }
     }
+    private static final String regex5= "(0|91)?[7-9][0-9]{9
+    public boolean validatePassword(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex5);
+        if(Pattern.matches(regex5,name1)==true)
+            return Pattern.matches(regex5,name1);
+        else {
+            throw new UserRegistrationException("send proper password");
+        }
 
 
     }
