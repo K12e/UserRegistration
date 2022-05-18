@@ -149,7 +149,15 @@ public class UserRegistration {
        throw new UserRegistrationException("send proper name");
        }
     }
-
+    private static final String regex2 = "^[A-Z]{1}[a-z]{2,}$";
+    public boolean validateLastName(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex1);
+        if(Pattern.matches(regex1,name1)==true)
+            return Pattern.matches(regex2,name1);
+        else {
+            throw new UserRegistrationException("send proper name");
+        }
+    }
 
 
     }

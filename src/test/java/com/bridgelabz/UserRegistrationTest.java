@@ -11,6 +11,14 @@ public class UserRegistrationTest {
         result=userRegistration.validateFirstName("Kalyani");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue() throws UserRegistrationException{
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result;
+        result = userRegistration.validateLastName("Rathod");
+        Assertions.assertTrue(result);
+    }
+
 
 
 }
