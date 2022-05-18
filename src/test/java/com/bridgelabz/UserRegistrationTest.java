@@ -60,6 +60,12 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validatePasswordRule4("kalyani@123");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenemailValidation_WhenProper_ShouldReturnTrue() throws UserRegistrationException{
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateEmailValidation("Kalyani@gmail.com");
+        Assertions.assertTrue(result);
+    }
 
 
 }

@@ -239,7 +239,15 @@ public class UserRegistration {
             throw new UserRegistrationException("send proper password");
         }
     }
-
+    private static final String regex = "[a-zA-Z0-9_.]*[-]*[+]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+";
+    public boolean validateEmailValidation(String name1) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex);
+        if (Pattern.matches(regex, name1) == true)
+            return Pattern.matches(regex, name1);
+        else {
+            throw new UserRegistrationException("send proper email");
+        }
+    }
 }
 
 
