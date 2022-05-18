@@ -42,6 +42,12 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validatePasswordRule1("Ayansh123");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenPasswordRule2_WhenProper_ShouldReturnTrue() throws  UserRegistrationException{
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validatePasswordRule2("Ayansh2020");
+        Assertions.assertTrue(result);
+    }
 
 
 }
