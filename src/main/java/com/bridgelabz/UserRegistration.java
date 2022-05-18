@@ -20,6 +20,7 @@ public class UserRegistration {
             System.out.println("name is invalid");
         }
     }
+
     public static void validLastName() {
         System.out.println("enter your first name");
         String name1 = scanner.next();
@@ -33,6 +34,7 @@ public class UserRegistration {
             System.out.println("name is invalid");
         }
     }
+
     public static void validEmail() {
 
         System.out.println("enter your Email");
@@ -48,6 +50,7 @@ public class UserRegistration {
             System.out.println("email is invalid");
         }
     }
+
     public static void validMobileNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your mobile number : ");
@@ -61,6 +64,7 @@ public class UserRegistration {
         else
             System.out.println("Phone number is Invalid");
     }
+
     public static void validPassword() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your password : ");
@@ -74,6 +78,7 @@ public class UserRegistration {
         else
             System.out.println("password is Invalid");
     }
+
     public static void validPasswordRule1() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your password : ");
@@ -87,6 +92,7 @@ public class UserRegistration {
         else
             System.out.println("password  in Uppercase is Invalid");
     }
+
     public static void validPasswordRule2() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your password : ");
@@ -100,10 +106,11 @@ public class UserRegistration {
         else
             System.out.println("password is only only one numeric is Invalid");
     }
+
     public static void validPasswordRule3() {
         System.out.println("Enter The Password At least one Upper case and one numeric");
         String password = scanner.nextLine();
-        String regex7= "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+1}$";
+        String regex7 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+1}$";
         Pattern pattern7 = Pattern.compile(regex7);
         Matcher matcher7 = pattern7.matcher(password);
         boolean r = matcher7.matches();
@@ -113,10 +120,11 @@ public class UserRegistration {
         else
             System.out.println("It is invalid Password.");
     }
+
     public static void validPasswordRule4() {
         System.out.println("Enter the Password At least One Upper Case & One Numeric & One Special Character:");
         String password = scanner.nextLine();
-        String regex8= "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+        String regex8 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
         Pattern pattern8 = Pattern.compile(regex8);
         Matcher matcher8 = pattern8.matcher(password);
         boolean r = matcher8.matches();
@@ -126,6 +134,7 @@ public class UserRegistration {
         else
             System.out.println("It is invalid Password.");
     }
+
     public static void emailValidation() {
         System.out.print("Enter the email :");
         String email = scanner.next();
@@ -141,52 +150,69 @@ public class UserRegistration {
 
 
     private static final String regex1 = "^[A-Z]{1}[a-z]{2,}$";
-    public boolean validateFirstName(String name1) throws UserRegistrationException{
+
+    public boolean validateFirstName(String name1) throws UserRegistrationException {
         Pattern pattern = Pattern.compile(regex1);
-       if(Pattern.matches(regex1,name1)==true)
-           return Pattern.matches(regex1,name1);
-       else {
-       throw new UserRegistrationException("send proper name");
-       }
-    }
-    private static final String regex2 = "^[A-Z]{1}[a-z]{2,}$";
-    public boolean validateLastName(String name1) throws UserRegistrationException{
-        Pattern pattern = Pattern.compile(regex1);
-        if(Pattern.matches(regex1,name1)==true)
-            return Pattern.matches(regex2,name1);
+        if (Pattern.matches(regex1, name1) == true)
+            return Pattern.matches(regex1, name1);
         else {
             throw new UserRegistrationException("send proper name");
         }
     }
-    private static final String regex3 = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+";
-    public boolean validateEmail(String name1) throws UserRegistrationException{
+
+    private static final String regex2 = "^[A-Z]{1}[a-z]{2,}$";
+
+    public boolean validateLastName(String name1) throws UserRegistrationException {
         Pattern pattern = Pattern.compile(regex1);
-        if(Pattern.matches(regex3,name1)==true)
-            return Pattern.matches(regex3,name1);
+        if (Pattern.matches(regex1, name1) == true)
+            return Pattern.matches(regex2, name1);
+        else {
+            throw new UserRegistrationException("send proper name");
+        }
+    }
+
+    private static final String regex3 = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+";
+
+    public boolean validateEmail(String name1) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex1);
+        if (Pattern.matches(regex3, name1) == true)
+            return Pattern.matches(regex3, name1);
         else {
             throw new UserRegistrationException("send proper email");
         }
     }
-    private static final String regex4= "(0|91)?[7-9][0-9]{9}";
-    public boolean validateMobileNumber(String name1) throws UserRegistrationException{
+
+    private static final String regex4 = "(0|91)?[7-9][0-9]{9}";
+
+    public boolean validateMobileNumber(String name1) throws UserRegistrationException {
         Pattern pattern = Pattern.compile(regex1);
-        if(Pattern.matches(regex4,name1)==true)
-            return Pattern.matches(regex4,name1);
+        if (Pattern.matches(regex4, name1) == true)
+            return Pattern.matches(regex4, name1);
         else {
             throw new UserRegistrationException("send proper number");
         }
     }
-    private static final String regex5= "(0|91)?[7-9][0-9]{9
-    public boolean validatePassword(String name1) throws UserRegistrationException{
+
+    private static final String regex5 = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
+
+    public boolean validatePassword(String name1) throws UserRegistrationException {
         Pattern pattern = Pattern.compile(regex5);
-        if(Pattern.matches(regex5,name1)==true)
-            return Pattern.matches(regex5,name1);
+        if (Pattern.matches(regex5, name1) == true)
+            return Pattern.matches(regex5, name1);
         else {
             throw new UserRegistrationException("send proper password");
         }
-
-
     }
+    private static final String regex6 = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
+    public boolean validatePasswordRule1(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex6);
+        if(Pattern.matches(regex6,name1)==true)
+            return Pattern.matches(regex6,name1);
+        else {
+            throw new UserRegistrationException("send proper name");
+        }
+    }
+}
 
 
 
