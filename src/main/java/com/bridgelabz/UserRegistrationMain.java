@@ -32,6 +32,8 @@ public class UserRegistrationMain {
             break;
             case 9 : UserRegistration.validPasswordRule4();
             break;
+            case 10 :UserRegistration.emailValidation();
+            break;
 
         }
     }

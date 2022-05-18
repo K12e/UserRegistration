@@ -126,6 +126,18 @@ public class UserRegistration {
         else
             System.out.println("It is invalid Password.");
     }
+    public static void emailValidation() {
+        System.out.print("Enter the email :");
+        String email = scanner.next();
+        String regex = "[a-zA-Z0-9_.]*[-]*[+]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        boolean r = matcher.matches();
+        if (r)
+            System.out.println("Valid G-mail Address");
+        else
+            System.out.println("Invalid G-mail Address");
+    }
 
     public boolean validateFirstName(String name) {
         String regex1 = "^[A-Z]{1}[a-z]{2,}$";
@@ -196,5 +208,14 @@ public class UserRegistration {
         boolean b6 = matcher.matches();
         return b6;
     }
-}
+
+    public boolean emailValidation(String email) {
+        String regex8 = "^[a-zA-Z0-9_.]*[-]*[+]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+";
+        Pattern pattern = Pattern.compile(regex8);
+        Matcher matcher = pattern.matcher(email);
+        boolean r = matcher.matches();
+        return r;
+        }
+    }
+
 

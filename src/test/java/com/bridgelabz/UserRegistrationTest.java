@@ -7,7 +7,7 @@ public class UserRegistrationTest {
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("Kalyani");
+        boolean result = userRegistration.validateFirstName("kalyani");
         Assertions.assertTrue(result);
     }
 
@@ -59,6 +59,14 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validatePasswordRule4("kalyani123");
         Assertions.assertTrue(result);
     }
-
+    @Test
+    public void givenemailValidation_WhenProper_ShouldReturnTrue(){
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.emailValidation("Kalyanirathod@gmail.com");
+        Assertions.assertTrue(result);
+    }
 }
+
+
+
 
