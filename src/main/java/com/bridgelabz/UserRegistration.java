@@ -167,6 +167,15 @@ public class UserRegistration {
             throw new UserRegistrationException("send proper email");
         }
     }
+    private static final String regex4= "(0|91)?[7-9][0-9]{9}";
+    public boolean validateMobileNumber(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex1);
+        if(Pattern.matches(regex4,name1)==true)
+            return Pattern.matches(regex4,name1);
+        else {
+            throw new UserRegistrationException("send proper number");
+        }
+    }
 
 
     }

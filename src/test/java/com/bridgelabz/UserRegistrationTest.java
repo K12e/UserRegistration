@@ -24,7 +24,12 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateEmail("Kalyani2095@gmail.com");
         Assertions.assertTrue(result);
     }
-
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnTrue() throws UserRegistrationException {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateMobileNumber("91 9689079507");
+        Assertions.assertTrue(result);
+    }
 
 
 }
