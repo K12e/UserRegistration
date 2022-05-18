@@ -18,6 +18,12 @@ public class UserRegistrationTest {
         result = userRegistration.validateLastName("Rathod");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void givenEmail_WhenProper_ShouldReturnTrue() throws UserRegistrationException {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateEmail("Kalyani2095@gmail.com");
+        Assertions.assertTrue(result);
+    }
 
 
 

@@ -158,6 +158,15 @@ public class UserRegistration {
             throw new UserRegistrationException("send proper name");
         }
     }
+    private static final String regex3 = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+";
+    public boolean validateEmail(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex1);
+        if(Pattern.matches(regex3,name1)==true)
+            return Pattern.matches(regex3,name1);
+        else {
+            throw new UserRegistrationException("send proper email");
+        }
+    }
 
 
     }
