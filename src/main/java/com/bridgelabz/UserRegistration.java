@@ -221,6 +221,15 @@ public class UserRegistration {
             throw new UserRegistrationException("send proper password");
         }
     }
+    private static final String regex8 = "[A-Z]{1}+[a-zA-Z]{6}+[0-9]+1}$";
+    public boolean validatePasswordRule3(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex8);
+        if(Pattern.matches(regex8,name1)==true)
+            return Pattern.matches(regex8,name1);
+        else {
+            throw new UserRegistrationException("send proper password");
+        }
+    }
 }
 
 
