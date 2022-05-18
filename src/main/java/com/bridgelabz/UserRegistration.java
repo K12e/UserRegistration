@@ -230,6 +230,16 @@ public class UserRegistration {
             throw new UserRegistrationException("send proper password");
         }
     }
+    private static final String regex9 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+    public boolean validatePasswordRule4(String name1) throws UserRegistrationException{
+        Pattern pattern = Pattern.compile(regex9);
+        if(Pattern.matches(regex9,name1)==true)
+            return Pattern.matches(regex9,name1);
+        else {
+            throw new UserRegistrationException("send proper password");
+        }
+    }
+
 }
 
 
