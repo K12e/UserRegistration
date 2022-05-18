@@ -11,7 +11,10 @@ public class UserRegistrationMain {
         System.out.println("Enter 4 : validate mobile number");
         System.out.println("Enter 5 : validation password");
         System.out.println("Enter 6 : validation passwordrule1");
-        System.out.println("Enter 6 : validation passwordrule2");
+        System.out.println("Enter 7 : validation passwordrule2");
+        System.out.println("Enter 8 : validation passwordrule2");
+        System.out.println("Enter 9 : validation passwordrule2");
+        System.out.println("Enter 10 : validation passwordrule2");
 
         switch (scanner.nextInt()) {
             case 1 :  UserRegistration.validFirstName();

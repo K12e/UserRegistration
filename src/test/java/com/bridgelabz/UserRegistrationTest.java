@@ -5,68 +5,14 @@ import org.junit.jupiter.api.Test;
 
 public class UserRegistrationTest {
     @Test
-    public void givenFirstName_WhenProper_ShouldReturnTrue() {
+    public void givenFirstName_WhenProper_ShouldReturnTrue() throws UserRegistrationException {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("kalyani");
+        boolean result;
+        result=userRegistration.validateFirstName("Kalyani");
         Assertions.assertTrue(result);
     }
 
-    @Test
-    public void givenLastName_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateLastName("Rathod");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenEmail_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateEmail("kalyani@gmail.com");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateMobileNumber("9685452145");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenPassword_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validatePassword("kalyai123");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenPasswordRule1_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validatePasswordRule1("Kalyai123");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenPasswordRule2_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validatePasswordRule2("K1");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenPasswordRule3_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validatePasswordRule3("K1");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenPasswordRule4_WhenProper_ShouldReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validatePasswordRule4("kalyani123");
-        Assertions.assertTrue(result);
-    }
-    @Test
-    public void givenemailValidation_WhenProper_ShouldReturnTrue(){
-        UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.emailValidation("Kalyanirathod@gmail.com");
-        Assertions.assertTrue(result);
-    }
+
 }
-
-
 
 
